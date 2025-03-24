@@ -1,12 +1,12 @@
-/* body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .loginContainer {
   display: flex;
@@ -17,8 +17,6 @@
 
 .loginCard {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);

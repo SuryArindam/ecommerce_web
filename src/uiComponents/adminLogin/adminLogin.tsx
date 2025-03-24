@@ -11,25 +11,23 @@ export const AdminLogin: React.FC = () => {
           <Typography variant="h4" gutterBottom>
             Login
           </Typography>
-          <form className="login-form">
-            <TextBox
-              id="userName"
-              label="User name"
-              onChange={() => {}}
-              floatLabel="Hello"
-              className="mb-3"
-            />
-            <TextBox
-              id="password"
-              label="Password"
-              onChange={() => {}}
-              floatLabel="Hello"
-              className="mb-3"
-            />
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-              Login
-            </Button>
-          </form>
+          <TextBox
+            id="userName"
+            label="User name"
+            onChange={() => {}}
+            floatLabel="Hello"
+            className="mb-3"
+          />
+          <TextBox
+            id="password"
+            label="Password"
+            onChange={() => {}}
+            floatLabel="Hello"
+            className="mb-3"
+          />
+          <Button type="submit" variant="contained" color="primary" fullWidth>
+            Login
+          </Button>
         </Paper>
       </div>
     </div>
