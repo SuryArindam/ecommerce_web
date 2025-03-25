@@ -6,7 +6,7 @@ import classes from "./adminLogin.module.css";
 export const AdminLogin: React.FC = () => {
   return (
     <div
-      className={`container d-flex justify-content-center align-items-center ${classes.outerContainer}`}
+      className={`container-fluid d-flex justify-content-center align-items-center ${classes.outerContainer}`}
     >
       <div className={classes.loginContainer}>
         <div className={classes.loginCard}>

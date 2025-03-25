@@ -1,15 +1,16 @@
 .outerContainer {
   height: 100vh !important;
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .loginContainer {
   display: flex;
-  background-image: url("https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png");
   justify-content: center;
   align-items: center;
   height: 500px;
   width: 550px;
-  z-index: 0;
 }
 
 .loginCard {
@@ -19,9 +20,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   width: 350px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 20px 5px rgba(10, 84, 2, 0.715);
   background: #ffffff00;
-  backdrop-filter: blur(30px);
-  color: rgb(255, 255, 255);
-  z-index: 1;
+  backdrop-filter: blur(5px);
 }
