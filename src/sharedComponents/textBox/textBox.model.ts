@@ -3,6 +3,10 @@ export enum TextboxVariant {
   Filled = "filled",
   Standard = "standard",
 }
+export enum IconType {
+  UserName = "userName",
+  Password = "password",
+}
 export interface ITextBox {
   value?: string | null | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -11,7 +15,11 @@ export interface ITextBox {
   isError?: boolean;
   errorText?: string;
   className?: string;
-  floatLabel?: string;
+  placeHolder: string;
   label: string;
   variant?: TextboxVariant;
+  isPasswordField?: boolean;
+  iconType?: IconType;
+  iconPosition?: "end" | "start";
+  isRequired?: boolean;
 }

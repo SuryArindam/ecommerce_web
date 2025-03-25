@@ -2,6 +2,7 @@ import { Button, Typography } from "@mui/material";
 import React from "react";
 import { TextBox } from "../../sharedComponents/textBox/textBox";
 import classes from "./adminLogin.module.css";
+import { IconType } from "../../sharedComponents/textBox/textBox.model";
 
 export const AdminLogin: React.FC = () => {
   return (
@@ -16,16 +17,23 @@ export const AdminLogin: React.FC = () => {
           <TextBox
             id="userName"
             label="User name"
+            placeHolder="Enter User name"
             onChange={() => {}}
-            floatLabel="Hello"
             className="mb-3"
+            isRequired={true}
+            iconType={IconType.UserName}
+            iconPosition="start"
           />
           <TextBox
             id="password"
             label="Password"
+            placeHolder="Enter Password"
             onChange={() => {}}
-            floatLabel="Hello"
             className="mb-3"
+            iconType={IconType.Password}
+            iconPosition="start"
+            isPasswordField={true}
+            isRequired={true}
           />
           <Button type="submit" variant="contained" color="primary" fullWidth>
             Login
