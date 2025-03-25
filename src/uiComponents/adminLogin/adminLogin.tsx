@@ -1,13 +1,15 @@
-import { Button, Paper, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React from "react";
 import { TextBox } from "../../sharedComponents/textBox/textBox";
 import classes from "./adminLogin.module.css";
 
 export const AdminLogin: React.FC = () => {
   return (
-    <div className="container">
+    <div
+      className={`container d-flex justify-content-center align-items-center ${classes.outerContainer}`}
+    >
       <div className={classes.loginContainer}>
-        <Paper elevation={10} className={classes.loginCard}>
+        <div className={classes.loginCard}>
           <Typography variant="h4" gutterBottom>
             Login
           </Typography>
@@ -28,7 +30,7 @@ export const AdminLogin: React.FC = () => {
           <Button type="submit" variant="contained" color="primary" fullWidth>
             Login
           </Button>
-        </Paper>
+        </div>
       </div>
     </div>
   );
