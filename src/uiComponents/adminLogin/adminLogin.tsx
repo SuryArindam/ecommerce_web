@@ -33,7 +33,7 @@ export const AdminLogin: React.FC = () => {
             isPasswordField={true}
             isRequired={true}
           />
-          <Button type="submit" variant="contained" color="primary" fullWidth>
+          <Button type="submit" variant="contained" color="primary">
             Login
           </Button>
         </div>
