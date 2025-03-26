@@ -25,6 +25,7 @@ export const TextBox: React.FC<ITextBox> = ({
   iconType,
   isPasswordField,
   isRequired,
+  fullWidth,
 }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -85,7 +86,7 @@ export const TextBox: React.FC<ITextBox> = ({
                   }
                 : undefined
             }
-            fullWidth
+            fullWidth={fullWidth ?? true}
           />
         </div>
       </div>

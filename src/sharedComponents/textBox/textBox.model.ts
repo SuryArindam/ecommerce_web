@@ -48,4 +48,5 @@ export interface ITextBox {
   isPasswordField?: boolean;
   iconType?: IconType;
   isRequired?: boolean;
+  fullWidth?: boolean;
 }
