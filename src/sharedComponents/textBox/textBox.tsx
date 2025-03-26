@@ -1,28 +1,16 @@
 import React, { useMemo, useState } from "react";
-import { IconType, ITextBox, TextboxVariant } from "./textBox.model";
+import { IconType, ITextBox, TextboxVariant, theme } from "./textBox.model";
 import {
-  createTheme,
   IconButton,
   InputAdornment,
   TextField,
   ThemeProvider,
 } from "@mui/material";
 import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
-// Extend the Palette and PaletteOptions interfaces
-declare module "@mui/material/styles" {
-  interface Palette {
-    customColor?: Palette["primary"];
-  }
-  interface PaletteOptions {
-    customColor?: PaletteOptions["primary"];
-  }
-}
-// Extend the TextField color overrides
-declare module "@mui/material/TextField" {
-  interface TextFieldPropsColorOverrides {
-    customColor: true;
-  }
-}
+import LockIcon from "@mui/icons-material/Lock";
+
+import classes from "./textBox.module.css";
+
 export const TextBox: React.FC<ITextBox> = ({
   id,
   name,
@@ -35,7 +23,6 @@ export const TextBox: React.FC<ITextBox> = ({
   variant,
   placeHolder,
   iconType,
-  iconPosition,
   isPasswordField,
   isRequired,
 }) => {
@@ -54,59 +41,54 @@ export const TextBox: React.FC<ITextBox> = ({
     return "text";
   }, [showPassword]);
 
-  const theme = createTheme({
-    palette: {
-      customColor: {
-        main: "#053d09", // Your custom color
-        contrastText: "#ffffff", // Text color for contrast
-      },
-    },
-  });
+  const iconRenderer = useMemo(() => {
+    switch (iconType) {
+      case IconType.UserName:
+        return <AccountCircle />;
+      case IconType.Password:
+        return <LockIcon />;
+    }
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-      <TextField
-        name={name}
-        id={id}
-        type={textFieldType}
-        value={value}
-        placeholder={placeHolder}
-        className={className}
-        required={isRequired ?? false}
-        error={isError}
-        helperText={isError ? errorText : ""}
-        label={label}
-        variant={variant ?? TextboxVariant.Outlined}
-        onChange={onChange}
-        color="customColor"
-        InputProps={
-          iconType
-            ? {
-                endAdornment: iconPosition === "end" && (
-                  <InputAdornment position="end">
-                    <IconButton onClick={onChangePassordVisibility} edge="end">
-                      {isPasswordField &&
-                        (showPassword ? <VisibilityOff /> : <Visibility />)}
-                      {iconType === IconType.UserName && <AccountCircle />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-                startAdornment: iconPosition === "start" && (
-                  <InputAdornment position="start">
-                    <IconButton
-                      onClick={onChangePassordVisibility}
-                      edge="start"
-                    >
-                      {isPasswordField &&
-                        (showPassword ? <VisibilityOff /> : <Visibility />)}
-                      {iconType === IconType.UserName && <AccountCircle />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }
-            : undefined
-        }
-        fullWidth
-      />
+      <div className={classes.boxModel}>
+        <div className={classes.boxIcon}>{iconRenderer}</div>
+        <div className={classes.boxText}>
+          <TextField
+            name={name}
+            id={id}
+            type={textFieldType}
+            value={value}
+            placeholder={placeHolder}
+            className={className}
+            required={isRequired ?? false}
+            error={isError}
+            helperText={isError ? errorText : ""}
+            label={label}
+            variant={variant ?? TextboxVariant.Outlined}
+            onChange={onChange}
+            color="customColor"
+            InputProps={
+              isPasswordField
+                ? {
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={onChangePassordVisibility}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }
+                : undefined
+            }
+            fullWidth
+          />
+        </div>
+      </div>
     </ThemeProvider>
   );
 };

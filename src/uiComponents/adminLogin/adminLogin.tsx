@@ -22,7 +22,6 @@ export const AdminLogin: React.FC = () => {
             className="mb-3"
             isRequired={true}
             iconType={IconType.UserName}
-            iconPosition="start"
           />
           <TextBox
             id="password"
@@ -31,7 +30,6 @@ export const AdminLogin: React.FC = () => {
             onChange={() => {}}
             className="mb-3"
             iconType={IconType.Password}
-            iconPosition="start"
             isPasswordField={true}
             isRequired={true}
           />

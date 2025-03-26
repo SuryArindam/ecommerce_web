@@ -1,3 +1,30 @@
+import { createTheme } from "@mui/material";
+
+// Extend the Palette and PaletteOptions interfaces
+declare module "@mui/material/styles" {
+  interface Palette {
+    customColor?: Palette["primary"];
+  }
+  interface PaletteOptions {
+    customColor?: PaletteOptions["primary"];
+  }
+}
+// Extend the TextField color overrides
+declare module "@mui/material/TextField" {
+  interface TextFieldPropsColorOverrides {
+    customColor: true;
+  }
+}
+
+export const theme = createTheme({
+  palette: {
+    customColor: {
+      main: "#053d09", // Your custom color
+      contrastText: "#ffffff", // Text color for contrast
+    },
+  },
+});
+
 export enum TextboxVariant {
   Outlined = "outlined",
   Filled = "filled",
@@ -20,6 +47,5 @@ export interface ITextBox {
   variant?: TextboxVariant;
   isPasswordField?: boolean;
   iconType?: IconType;
-  iconPosition?: "end" | "start";
   isRequired?: boolean;
 }
