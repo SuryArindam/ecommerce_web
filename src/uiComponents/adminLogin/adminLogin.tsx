@@ -1,8 +1,10 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 import { TextBox } from "../../sharedComponents/textBox/textBox";
 import classes from "./adminLogin.module.css";
 import { IconType } from "../../sharedComponents/textBox/textBox.model";
+import { Button } from "../../sharedComponents/button/button";
+import { Color } from "../../App.model";
 
 export const AdminLogin: React.FC = () => {
   return (
@@ -33,9 +35,7 @@ export const AdminLogin: React.FC = () => {
             isPasswordField={true}
             isRequired={true}
           />
-          <Button type="submit" variant="contained" color="primary">
-            Login
-          </Button>
+          <Button color={Color.Info}>Login</Button>
         </div>
       </div>
     </div>
