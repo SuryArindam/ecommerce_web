@@ -1,12 +1,11 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import { AdminLogin } from "./uiComponents/adminLogin/adminLogin";
+import { router } from "./routing";
 
 function App() {
   return (
     <>
-      <div>
-        <AdminLogin />
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
