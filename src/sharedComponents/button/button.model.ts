@@ -1,3 +1,4 @@
+import React from "react";
 import { Color } from "../../App.model";
 
 export enum ButtonVariant {
@@ -6,10 +7,17 @@ export enum ButtonVariant {
   Outlined = "outlined",
 }
 
+export enum ButtonSize {
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
+}
 export interface IButton {
   id?: string;
   name?: string;
   variant?: ButtonVariant;
   color?: Color;
-  children?: React.ReactNode;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+  size?: ButtonSize;
 }

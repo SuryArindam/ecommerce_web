@@ -5,7 +5,8 @@ import classes from "./adminLogin.module.css";
 import { IconType } from "../../sharedComponents/textBox/textBox.model";
 import { Button } from "../../sharedComponents/button/button";
 import { Color } from "../../App.model";
-
+import LoginIcon from "@mui/icons-material/Login";
+import { ButtonVariant } from "../../sharedComponents/button/button.model";
 export const AdminLogin: React.FC = () => {
   return (
     <div
@@ -35,7 +36,13 @@ export const AdminLogin: React.FC = () => {
             isPasswordField={true}
             isRequired={true}
           />
-          <Button color={Color.Info}>Login</Button>
+          <Button
+            color={Color.Secondary}
+            icon={<LoginIcon />}
+            variant={ButtonVariant.Contained}
+          >
+            Login
+          </Button>
         </div>
       </div>
     </div>
