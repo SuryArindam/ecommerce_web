@@ -40,6 +40,7 @@ export const AdminLogin: React.FC = () => {
             color={Color.Secondary}
             icon={<LoginIcon />}
             variant={ButtonVariant.Contained}
+            onClick={() => {}}
           >
             Login
           </Button>
