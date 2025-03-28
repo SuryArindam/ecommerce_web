@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .boxText {
   width: 300px;

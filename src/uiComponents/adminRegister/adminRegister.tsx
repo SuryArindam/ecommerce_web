@@ -7,6 +7,7 @@ import { Button } from "../../sharedComponents/button/button";
 import { Color } from "../../App.model";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import { ButtonVariant } from "../../sharedComponents/button/button.model";
+import Checkbox from "@mui/material/Checkbox";
 
 export const AdminRegister: React.FC = () => {
   return (
@@ -35,17 +36,16 @@ export const AdminRegister: React.FC = () => {
             className="mb-3"
             isRequired={true}
             iconType={IconType.Email}
-           
           />
-            <TextBox
-                id="phone"
-                label="Phone"
-                placeHolder="Enter Phone"
-                onChange={() => {}}
-                className="mb-3"
-                isRequired={true}
-                iconType={IconType.Phone}
-            />
+          <TextBox
+            id="phone"
+            label="Phone"
+            placeHolder="Enter Phone"
+            onChange={() => {}}
+            className="mb-3"
+            isRequired={true}
+            iconType={IconType.Phone}
+          />
           <TextBox
             id="password"
             label="Password"
@@ -75,10 +75,10 @@ export const AdminRegister: React.FC = () => {
             Register
           </Button>
           <div className="mt-3">
-
-          <span>
-              I accept <a href="#" className="text-blue-500">Terms of Use</a>
-            </span>
+            <Checkbox />I accept{" "}
+            <Button onClick={() => {}} variant={ButtonVariant.Text}>
+              Terms of use
+            </Button>
           </div>
         </div>
       </div>

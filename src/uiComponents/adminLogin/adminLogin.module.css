@@ -24,3 +24,9 @@
   background: #ffffff00;
   backdrop-filter: blur(5px);
 }
+.adminCredentialBox {
+  padding-right: 10px;
+  border: 2px solid rgba(254, 61, 2);
+  border-radius: 25px;
+  margin-bottom: 10px;
+}

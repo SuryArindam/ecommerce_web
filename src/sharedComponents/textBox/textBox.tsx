@@ -50,10 +50,10 @@ export const TextBox: React.FC<ITextBox> = ({
         return <AccountCircle />;
       case IconType.Password:
         return <LockIcon />;
-        case IconType.Email:
-            return <EmailIcon />;
-        case IconType.Phone:
-            return <PhoneIcon />;
+      case IconType.Email:
+        return <EmailIcon />;
+      case IconType.Phone:
+        return <PhoneIcon />;
     }
   }, []);
 
@@ -76,8 +76,9 @@ export const TextBox: React.FC<ITextBox> = ({
             variant={variant ?? TextboxVariant.Outlined}
             onChange={onChange}
             color="customColor"
-            InputProps={
-              isPasswordField
+            InputProps={{
+              disableUnderline: true,
+              ...(isPasswordField
                 ? {
                     endAdornment: (
                       <InputAdornment position="end">
@@ -90,8 +91,8 @@ export const TextBox: React.FC<ITextBox> = ({
                       </InputAdornment>
                     ),
                   }
-                : undefined
-            }
+                : undefined),
+            }}
             fullWidth={fullWidth ?? true}
           />
         </div>
