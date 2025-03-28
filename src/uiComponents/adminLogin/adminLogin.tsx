@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import React from "react";
 import { TextBox } from "../../sharedComponents/textBox/textBox";
 import classes from "./adminLogin.module.css";
@@ -12,6 +12,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import { ButtonVariant } from "../../sharedComponents/button/button.model";
 import data from "../../sampleData.json";
 import { IAdmin } from "./admin.model";
+import "../../App.css";
 
 export const AdminLogin: React.FC = () => {
   const checkData = () => {
@@ -53,14 +54,29 @@ export const AdminLogin: React.FC = () => {
               variant={TextboxVariant.Standard}
             />
           </div>
-          <Button
-            color={Color.Secondary}
-            icon={<LoginIcon />}
-            variant={ButtonVariant.Contained}
-            onClick={checkData}
-          >
-            Login
-          </Button>
+          <div className="my-3 text-end">
+            Don&#39;t have an account?
+            <Link
+              className="termsLink"
+              variant="subtitle1"
+              color={Color.Primary}
+              onClick={() => console.log("Register")}
+            >
+              {" "}
+              Register here.
+            </Link>
+          </div>
+          <div>
+            <Button
+              color={Color.Secondary}
+              icon={<LoginIcon />}
+              variant={ButtonVariant.Contained}
+              onClick={checkData}
+              fullWidth
+            >
+              Login
+            </Button>
+          </div>
         </div>
       </div>
     </div>

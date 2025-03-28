@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import React from "react";
 import { TextBox } from "../../sharedComponents/textBox/textBox";
 import classes from "./adminRegister.module.css";
@@ -8,6 +8,7 @@ import { Color } from "../../App.model";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import { ButtonVariant } from "../../sharedComponents/button/button.model";
 import Checkbox from "@mui/material/Checkbox";
+import "../../App.css";
 
 export const AdminRegister: React.FC = () => {
   return (
@@ -76,9 +77,13 @@ export const AdminRegister: React.FC = () => {
           </Button>
           <div className="mt-3">
             <Checkbox />I accept{" "}
-            <Button onClick={() => {}} variant={ButtonVariant.Text}>
+            <Link
+              className="termsLink"
+              variant="subtitle1"
+              onClick={() => console.log("Terms")}
+            >
               Terms of use
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

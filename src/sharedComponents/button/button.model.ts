@@ -20,5 +20,6 @@ export interface IButton {
   icon?: React.ReactNode;
   children: React.ReactNode;
   size?: ButtonSize;
-  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  fullWidth?: boolean;
 }

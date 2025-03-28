@@ -12,6 +12,7 @@ export const Button: React.FC<IButton> = ({
   icon,
   size,
   onClick,
+  fullWidth,
 }) => {
   return (
     <MUI_Button
@@ -22,6 +23,7 @@ export const Button: React.FC<IButton> = ({
       name={name}
       endIcon={icon ? icon : null}
       size={size ?? ButtonSize.Medium}
+      fullWidth={fullWidth ?? false}
     >
       {children}
     </MUI_Button>
