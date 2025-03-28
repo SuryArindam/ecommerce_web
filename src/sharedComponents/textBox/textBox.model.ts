@@ -33,6 +33,8 @@ export enum TextboxVariant {
 export enum IconType {
   UserName = "userName",
   Password = "password",
+  Email = "email",
+  Phone = "phone",
 }
 export interface ITextBox {
   value?: string | null | undefined;

@@ -9,6 +9,8 @@ import {
 import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
 import classes from "./textBox.module.css";
 
 export const TextBox: React.FC<ITextBox> = ({
@@ -48,6 +50,10 @@ export const TextBox: React.FC<ITextBox> = ({
         return <AccountCircle />;
       case IconType.Password:
         return <LockIcon />;
+        case IconType.Email:
+            return <EmailIcon />;
+        case IconType.Phone:
+            return <PhoneIcon />;
     }
   }, []);
 
