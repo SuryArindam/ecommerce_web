@@ -11,7 +11,7 @@ import { Color } from "../../../App.model";
 import LoginIcon from "@mui/icons-material/Login";
 import { ButtonVariant } from "../../../sharedComponents/button/button.model";
 import data from "../../../sampleData.json";
-import { IAdmin } from "./admin.model";
+import { IAdmin } from "../admin.model";
 import "../../../App.css";
 
 interface IAdminLoginProps {
