@@ -13,10 +13,12 @@ export const Button: React.FC<IButton> = ({
   size,
   onClick,
   fullWidth,
+  className,
 }) => {
   return (
     <MUI_Button
       onClick={onClick}
+      className={className}
       variant={variant ?? ButtonVariant.Contained}
       color={color ?? Color.Primary}
       id={id}

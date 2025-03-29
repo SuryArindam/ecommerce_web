@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AdminLogin } from "./uiComponents/adminLogin/adminLogin";
-import { AdminRegister } from "./uiComponents/adminRegister/adminRegister";
 import { ErrorPage } from "./errorPage/errorPage";
-// import { AdminDashboard } from "./uiComponents/adminDashboard/adminDashboard";
+import { AdminLoginRegister } from "./uiComponents/adminLoginRegister/adminLoginRegister";
 
 export const router = createBrowserRouter([
   {
@@ -10,12 +8,9 @@ export const router = createBrowserRouter([
     element: <div>Home page</div>,
   },
   {
-    path: "/adminlogin",
-    element: <AdminLogin />,
+    path: "/adminoperation",
+    element: <AdminLoginRegister />,
   },
-  {
-    path: "/adminregister",
-    element: <AdminRegister />,
-  },
+
   { path: "*", element: <ErrorPage /> },
 ]);

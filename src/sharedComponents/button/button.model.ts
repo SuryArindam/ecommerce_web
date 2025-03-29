@@ -15,6 +15,7 @@ export enum ButtonSize {
 export interface IButton {
   id?: string;
   name?: string;
+  className?: string;
   variant?: ButtonVariant;
   color?: Color;
   icon?: React.ReactNode;

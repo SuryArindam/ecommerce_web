@@ -4,16 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.loginContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  width: 550px;
-}
-
-.loginCard {
+.adminCard {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   padding: 2rem;
@@ -24,6 +15,7 @@
   background: #ffffff00;
   backdrop-filter: blur(5px);
 }
+
 .adminCredentialBox {
   padding-right: 10px;
   border: 2px solid rgba(254, 61, 2);
