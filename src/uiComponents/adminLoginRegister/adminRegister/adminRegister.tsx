@@ -9,7 +9,6 @@ import { Button } from "../../../sharedComponents/button/button";
 import { Color } from "../../../App.model";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import { ButtonVariant } from "../../../sharedComponents/button/button.model";
-import Checkbox from "@mui/material/Checkbox";
 import "../../../App.css";
 import classes from "../adminLoginRegister.module.css";
 
@@ -97,12 +96,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
         >
           Register
         </Button>
-      </div>
-      <div className="mt-1">
-        <Checkbox />I accept{" "}
-        <Link className="termsLink" variant="subtitle1" onClick={() => {}}>
-          Terms of use
-        </Link>
       </div>
       <div className="mt-2 text-start">
         Already have an account?
