@@ -15,17 +15,20 @@ export const DashboardHome: React.FC = () => {
           icon={KpiIconType.Customers}
           totalCount={2100}
           className="me-3"
+          dailyAndMonthlyCount={{ dailyCount: 10, monthlyCount: 25 }}
         />
         <KpiCard
           header="Orders"
           className="me-3"
           icon={KpiIconType.Orders}
           totalCount={2100}
+          dailyAndMonthlyCount={{ dailyCount: 4, monthlyCount: 10 }}
         />
         <KpiCard
           header="Revenue"
           icon={KpiIconType.Revenue}
           totalCount={2100}
+          dailyAndMonthlyCount={{ dailyCount: 400, monthlyCount: 1000 }}
         />
       </div>
     </div>
