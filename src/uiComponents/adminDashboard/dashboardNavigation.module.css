@@ -2,3 +2,11 @@
   background-color: rgb(53, 57, 171) !important;
   border-radius: 20px;
 }
+.sidebarNav {
+  position: fixed;
+  box-sizing: border-box;
+  flex: 1;
+}
+.sidebarContainer {
+  overflow-x: hidden;
+}

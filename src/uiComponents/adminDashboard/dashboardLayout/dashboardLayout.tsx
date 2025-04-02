@@ -49,7 +49,9 @@ export const DashboardLayout: React.FC = () => {
               </div>
             </div>
           </div>
-          <Outlet />
+          <div className="col-md-12">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

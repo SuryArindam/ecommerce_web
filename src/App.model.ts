@@ -4,4 +4,8 @@ export const enum Color {
   Info = "info",
   Warning = "warning",
   Error = "error",
+  Danger = "danger",
+  Success = "success",
+  Dark = "dark",
+  Light = "light",
 }

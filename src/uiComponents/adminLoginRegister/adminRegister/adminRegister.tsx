@@ -105,7 +105,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
           color={Color.Primary}
           onClick={onLoginClick}
         >
-          {" "}
           Login here.
         </Link>
       </div>

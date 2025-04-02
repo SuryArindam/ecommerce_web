@@ -61,13 +61,12 @@ export const AdminLogin: React.FC<IAdminLoginProps> = ({ onRegisterClick }) => {
           color={Color.Primary}
           onClick={onRegisterClick}
         >
-          {" "}
           Register here.
         </Link>
       </div>
       <div>
         <Button
-          color={Color.Secondary}
+          color={Color.Success}
           icon={<LoginIcon />}
           variant={ButtonVariant.Contained}
           onClick={checkData}

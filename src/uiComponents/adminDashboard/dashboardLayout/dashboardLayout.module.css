@@ -11,10 +11,9 @@
 }
 .menuAndOutletContainer {
   height: 100vh;
-  border: 1px solid;
+  width: auto;
 }
 .sidenavContainer {
   padding-top: 50px;
   height: 100vh;
-  border: 1px solid;
 }
