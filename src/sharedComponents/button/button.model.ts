@@ -17,7 +17,13 @@ export interface IButton {
   name?: string;
   className?: string;
   variant?: ButtonVariant;
-  color?: Color;
+  color?:
+    | Color.Primary
+    | Color.Secondary
+    | Color.Success
+    | Color.Error
+    | Color.Info
+    | Color.Warning;
   icon?: React.ReactNode;
   children: React.ReactNode;
   size?: ButtonSize;
