@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import { DashboardNavigation } from "../dashboardNavigation";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { AppConstants } from "../../../AppConstants";
-import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
-import { Color } from "../../../App.model";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import classes from "./dashboardLayout.module.css";
-import LightModeIcon from "@mui/icons-material/LightMode";
+import NotificationIcon from "../../../assets/icons/notification.svg?react";
+import LightThemeIcon from "../../../assets/icons/lightTheme.svg?react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import ModeNightIcon from "@mui/icons-material/ModeNight";
+import DarkThemeIcon from "../../../assets/icons/darkTheme.svg?react";
+import ProfileIcon from "../../../assets/icons/account.svg?react";
+
+import "../../../App.css";
 
 export const DashboardLayout: React.FC = () => {
   const location = useLocation();
@@ -35,17 +36,14 @@ export const DashboardLayout: React.FC = () => {
         <div className={`${classes.menuAndOutletContainer} px-5 py-4`}>
           <div className="d-flex justify-content-end">
             <div className="d-flex col-md-6 justify-content-end">
-              <div className={classes.icon}>
-                <LightModeIcon fontSize="medium" color={Color.Warning} />
+              <div className={classes.iconContainer}>
+                <LightThemeIcon className="icons" />
               </div>
-              <div className={classes.icon}>
-                <NotificationsNoneIcon
-                  color={Color.Secondary}
-                  fontSize="medium"
-                />
+              <div className={classes.iconContainer}>
+                <NotificationIcon className="icons" />
               </div>
-              <div className={classes.icon}>
-                <AssignmentIndIcon color={Color.Primary} fontSize="medium" />
+              <div className={classes.iconContainer}>
+                <ProfileIcon className="icons" />
               </div>
             </div>
           </div>

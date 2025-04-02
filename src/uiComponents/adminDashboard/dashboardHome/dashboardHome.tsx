@@ -9,7 +9,7 @@ export const DashboardHome: React.FC = () => {
       <Typography variant="h5" gutterBottom>
         Home
       </Typography>
-      <div className="d-flex col-md-12 col-sm-12 border justify-content-center w-100">
+      <div className="d-flex col-md-12 col-sm-12 justify-content-center w-100">
         <KpiCard
           header="Customers"
           icon={KpiIconType.Customers}
