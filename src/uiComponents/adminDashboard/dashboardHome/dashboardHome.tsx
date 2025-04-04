@@ -13,7 +13,7 @@ export const DashboardHome: React.FC = () => {
         <KpiCard
           header="Customers"
           icon={KpiIconType.Customers}
-          totalCount={2100}
+          totalCount={32}
           className="me-3"
           dailyAndMonthlyCount={{ dailyCount: 10, monthlyCount: 25 }}
         />
@@ -21,13 +21,13 @@ export const DashboardHome: React.FC = () => {
           header="Orders"
           className="me-3"
           icon={KpiIconType.Orders}
-          totalCount={2100}
+          totalCount={15}
           dailyAndMonthlyCount={{ dailyCount: 4, monthlyCount: 10 }}
         />
         <KpiCard
           header="Revenue"
           icon={KpiIconType.Revenue}
-          totalCount={2100}
+          totalCount={2800}
           dailyAndMonthlyCount={{ dailyCount: 400, monthlyCount: 1000 }}
         />
       </div>
