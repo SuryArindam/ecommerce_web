@@ -7,10 +7,11 @@ import classes from "./dashboardNavigation.module.css";
 interface IDashboardNavigationMenuItemProps {
   path: string;
   menuText: string;
+  onClick?: (e: unknown) => void;
 }
 export const DashboardNavigationMenuItem: React.FC<
   IDashboardNavigationMenuItemProps
-> = ({ path, menuText }) => {
+> = ({ path, menuText, onClick }) => {
   const [active, setActive] = useState<boolean>();
 
   const location = useLocation();
@@ -23,10 +24,14 @@ export const DashboardNavigationMenuItem: React.FC<
     return path === "" ? "" : `${AppConstants.adminDashboardBaseUrl}${path}`;
   }, []);
 
+  const onMenuItemClick = (e: unknown) => {
+    if (onClick) onClick(e);
+  };
   return (
     <>
       <MenuItem
         className={active ? classes.active : ""}
+        onClick={onMenuItemClick}
         component={
           <NavLink
             to={routePath}
