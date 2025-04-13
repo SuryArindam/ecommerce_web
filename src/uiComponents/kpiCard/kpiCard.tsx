@@ -5,6 +5,7 @@ import ClientsIcon from "../../assets/icons/clients.svg?react";
 import CartIcon from "../../assets/icons/cart.svg?react";
 import RevenueIcon from "../../assets/icons/earning.svg?react";
 import "../../App.css";
+import { useAppStore } from "../../appStore/app.store";
 
 export const KpiCard: React.FC<IKpiCardProps> = ({
   header,
@@ -13,6 +14,14 @@ export const KpiCard: React.FC<IKpiCardProps> = ({
   className,
   dailyAndMonthlyCount,
 }) => {
+  const { adminDashboardTheme } = useAppStore();
+
+  const localClassName = `${classes.kpiCardContainer} col-md col-sm-12 ${
+    className ?? ""
+  } ${
+    adminDashboardTheme === "light" ? classes.lightTheme : classes.darkTheme
+  }`;
+
   const iconTextRender: IconText = useMemo(() => {
     const _iconText: IconText = {
       icon: undefined,
@@ -42,11 +51,7 @@ export const KpiCard: React.FC<IKpiCardProps> = ({
   }, []);
 
   return (
-    <div
-      className={`${classes.kpiCardContainer} col-md col-sm-12 ${
-        className ?? ""
-      }`}
-    >
+    <div className={localClassName}>
       <div className="d-flex justify-content-between">
         <span className={classes.kpiHeader}>{header}</span>
         {iconTextRender.icon}

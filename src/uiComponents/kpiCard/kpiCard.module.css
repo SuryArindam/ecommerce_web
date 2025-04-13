@@ -28,3 +28,17 @@
   font-weight: 900;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.lightTheme {
+  border-color: rgb(29, 243, 239);
+  box-shadow: 4px 3px 5px 1px rgb(6, 229, 245);
+  background-color: (213 229 227 / 11%);
+  color: rgb(3 105 103 / 97%);
+  text-shadow: 1px 1px 4px rgb(6, 229, 245);
+}
+.darkTheme {
+  border-color: rgb(243, 243, 29);
+  box-shadow: 4px 3px 5px 1px rgb(241, 241, 110);
+  background-color: rgba(12, 11, 11, 0.874);
+  color: rgb(243, 243, 29);
+  text-shadow: 1px 1px 4px rgb(241, 241, 110);
+}

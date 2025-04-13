@@ -5,15 +5,25 @@ import { AppConstants } from "../../../AppConstants";
 import classes from "./dashboardLayout.module.css";
 import NotificationIcon from "../../../assets/icons/notification.svg?react";
 import LightThemeIcon from "../../../assets/icons/lightTheme.svg?react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import DarkThemeIcon from "../../../assets/icons/darkTheme.svg?react";
 import ProfileIcon from "../../../assets/icons/account.svg?react";
 
 import "../../../App.css";
+import { useAppStore } from "../../../appStore/app.store";
 
 export const DashboardLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { adminDashboardTheme, setAdminDashboardTheme } = useAppStore();
+
+  const changeTheme = () => {
+    if (adminDashboardTheme === "light") {
+      setAdminDashboardTheme("dark");
+    } else {
+      setAdminDashboardTheme("light");
+    }
+  };
 
   useEffect(() => {
     if (
@@ -36,8 +46,12 @@ export const DashboardLayout: React.FC = () => {
         <div className={`${classes.menuAndOutletContainer} px-5 py-4`}>
           <div className="d-flex justify-content-end">
             <div className="d-flex col-md-6 justify-content-end">
-              <div className={classes.iconContainer}>
-                <LightThemeIcon className="icons" />
+              <div className={classes.iconContainer} onClick={changeTheme}>
+                {adminDashboardTheme === "light" ? (
+                  <DarkThemeIcon className="icons" />
+                ) : (
+                  <LightThemeIcon className="icons" />
+                )}
               </div>
               <div className={classes.iconContainer}>
                 <NotificationIcon className="icons" />
