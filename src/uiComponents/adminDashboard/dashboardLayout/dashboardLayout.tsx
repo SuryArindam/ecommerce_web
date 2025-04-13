@@ -10,6 +10,8 @@ import ProfileIcon from "../../../assets/icons/account.svg?react";
 
 import "../../../App.css";
 import { useAppStore } from "../../../appStore/app.store";
+import { Tooltip } from "../../tooltip/tooltip";
+import { TooltipTransitionType } from "../../tooltip/tooltip.model";
 
 export const DashboardLayout: React.FC = () => {
   const location = useLocation();
@@ -46,19 +48,41 @@ export const DashboardLayout: React.FC = () => {
         <div className={`${classes.menuAndOutletContainer} px-5 py-4`}>
           <div className="d-flex justify-content-end">
             <div className="d-flex col-md-6 justify-content-end">
-              <div className={classes.iconContainer} onClick={changeTheme}>
-                {adminDashboardTheme === "light" ? (
-                  <DarkThemeIcon className="icons" />
-                ) : (
-                  <LightThemeIcon className="icons" />
-                )}
-              </div>
-              <div className={classes.iconContainer}>
-                <NotificationIcon className="icons" />
-              </div>
-              <div className={classes.iconContainer}>
-                <ProfileIcon className="icons" />
-              </div>
+              <Tooltip
+                title={
+                  adminDashboardTheme === "light"
+                    ? "Change to Dark theme"
+                    : "Change to Light theme"
+                }
+                arrow={true}
+                transition={TooltipTransitionType.Zoom}
+              >
+                <div className={classes.iconContainer} onClick={changeTheme}>
+                  {adminDashboardTheme === "light" ? (
+                    <DarkThemeIcon className="icons" />
+                  ) : (
+                    <LightThemeIcon className="icons" />
+                  )}
+                </div>
+              </Tooltip>
+              <Tooltip
+                title="Notifications"
+                arrow
+                transition={TooltipTransitionType.Zoom}
+              >
+                <div className={classes.iconContainer}>
+                  <NotificationIcon className="icons" />
+                </div>
+              </Tooltip>
+              <Tooltip
+                title="Profile"
+                arrow
+                transition={TooltipTransitionType.Zoom}
+              >
+                <div className={classes.iconContainer}>
+                  <ProfileIcon className="icons" />
+                </div>
+              </Tooltip>
             </div>
           </div>
           <div className="col-md-12">

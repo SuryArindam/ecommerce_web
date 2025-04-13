@@ -14,7 +14,7 @@ export enum TooltipPosition {
   TopStart = "top-start",
   Top = "top",
 }
-export enum TransitionType {
+export enum TooltipTransitionType {
   Fade = "Fade",
   Grow = "Grow",
   Zoom = "Zoom",
@@ -28,5 +28,5 @@ export interface ITooltipProps {
   leaveDelay?: number;
   open?: boolean;
   direction?: TooltipPosition;
-  transition?: TransitionType;
+  transition?: TooltipTransitionType;
 }

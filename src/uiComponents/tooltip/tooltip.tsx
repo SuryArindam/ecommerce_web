@@ -3,7 +3,7 @@ import { Fade, Grow, Tooltip as MUI_Tooltip, Zoom } from "@mui/material";
 import {
   ITooltipProps,
   TooltipPosition,
-  TransitionType,
+  TooltipTransitionType,
 } from "./tooltip.model";
 export const Tooltip: React.FC<ITooltipProps> = ({
   children,
@@ -16,13 +16,13 @@ export const Tooltip: React.FC<ITooltipProps> = ({
   open,
   transition,
 }) => {
-  const getTransition = (transition: TransitionType) => {
+  const getTransition = (transition: TooltipTransitionType) => {
     switch (transition) {
-      case TransitionType.Fade:
+      case TooltipTransitionType.Fade:
         return Fade;
-      case TransitionType.Grow:
+      case TooltipTransitionType.Grow:
         return Grow;
-      case TransitionType.Zoom:
+      case TooltipTransitionType.Zoom:
         return Zoom;
     }
   };
@@ -34,7 +34,7 @@ export const Tooltip: React.FC<ITooltipProps> = ({
       enterDelay={enterDelay}
       followCursor={followCursor}
       leaveDelay={leaveDelay}
-      open={open ?? true}
+      open={open}
       slots={{
         transition: transition ? getTransition(transition) : Grow,
       }}
