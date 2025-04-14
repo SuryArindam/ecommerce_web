@@ -16,7 +16,7 @@ export const DashboardNavigation: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const lightTheme = "lightThemeBorder lightThemeBackground";
-  const darkTheme = `darkThemeBorder darkThemeBackground ${classes.hamburgerIconInvert}`;
+  const darkTheme = "darkThemeBorder darkThemeBackground";
 
   const localClassName = `${collapsed ? classes.translateButton : ""} ${
     adminDashboardTheme === "light" ? lightTheme : darkTheme
@@ -33,12 +33,16 @@ export const DashboardNavigation: React.FC = () => {
           className={localClassName}
           onClick={() => setCollapsed((collapsed) => !collapsed)}
         >
-          <HamburgerIcon className={classes.hamburgerIcon} />
+          <HamburgerIcon
+            className={`${
+              adminDashboardTheme === "dark" ? classes.hamburgerIconInvert : ""
+            } ${classes.hamburgerIcon}`}
+          />
         </div>
       </Tooltip>
       <div>
         <Sidebar
-          className={`border border-primary ${classes.sidebarNav}`}
+          className={`${classes.sidebarNav}`}
           breakPoint="all"
           // collapsed={collapsed}
           // onBreakPoint={setCollapsed}

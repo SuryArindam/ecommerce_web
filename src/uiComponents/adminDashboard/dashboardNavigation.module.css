@@ -28,7 +28,7 @@
   height: 35px;
 }
 .hamburgerIconInvert {
-  filter: invert(20%);
+  filter: invert(1);
 }
 .translateButton {
   position: relative;

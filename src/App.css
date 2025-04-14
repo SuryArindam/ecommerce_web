@@ -11,10 +11,11 @@
 }
 .lightThemeBorder {
   border-color: rgb(29, 243, 239);
+  border: 1px solid;
   box-shadow: 4px 3px 5px 1px rgb(6, 229, 245);
 }
 .lightThemeBackground {
-  background-color: (213 229 227 / 11%);
+  background-color: rgba(241, 243, 243, 0.41) !important;
 }
 .lightThemeText {
   color: rgb(3 105 103 / 97%);
@@ -25,7 +26,7 @@
   box-shadow: 4px 3px 5px 1px rgb(241, 241, 110);
 }
 .darkThemeBackground {
-  background-color: rgba(12, 11, 11, 0.874);
+  background-color: rgba(12, 11, 11, 0.874) !important;
 }
 .darkThemeText {
   color: rgb(243, 243, 29);

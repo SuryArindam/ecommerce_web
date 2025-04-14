@@ -19,14 +19,6 @@ export const DashboardLayout: React.FC = () => {
 
   const { adminDashboardTheme, setAdminDashboardTheme } = useAppStore();
 
-  const changeTheme = () => {
-    if (adminDashboardTheme === "light") {
-      setAdminDashboardTheme("dark");
-    } else {
-      setAdminDashboardTheme("light");
-    }
-  };
-
   useEffect(() => {
     if (
       location.pathname.lastIndexOf("/") !==
@@ -39,13 +31,21 @@ export const DashboardLayout: React.FC = () => {
     }
   }, [location.pathname, navigate]);
 
+  const changeTheme = () => {
+    if (adminDashboardTheme === "light") {
+      setAdminDashboardTheme("dark");
+    } else {
+      setAdminDashboardTheme("light");
+    }
+  };
+
   return (
     <div className="d-flex">
       <div className={`${classes.sidenavContainer} col-md-2`}>
         <DashboardNavigation />
       </div>
       <div className="col-md-10">
-        <div className={`${classes.menuAndOutletContainer} px-5 py-4`}>
+        <div className={`${classes.menuAndOutletContainer}  px-5 py-4`}>
           <div className="d-flex justify-content-end">
             <div className="d-flex col-md-6 justify-content-end">
               <Tooltip
