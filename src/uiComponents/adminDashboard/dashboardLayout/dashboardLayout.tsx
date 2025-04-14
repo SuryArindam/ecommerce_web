@@ -19,6 +19,15 @@ export const DashboardLayout: React.FC = () => {
 
   const { adminDashboardTheme, setAdminDashboardTheme } = useAppStore();
 
+  const lightTheme = "lightThemeBackground lightThemeText";
+  const darkTheme = "darkThemeBackground darkThemeText";
+
+  const localClassName =
+    adminDashboardTheme === "light" ? lightTheme : darkTheme;
+  const localIconContainer = `${classes.iconContainer} ${
+    adminDashboardTheme === "light" ? "lightThemeBorder" : "darkThemeBorder"
+  }`;
+
   useEffect(() => {
     if (
       location.pathname.lastIndexOf("/") !==
@@ -40,7 +49,7 @@ export const DashboardLayout: React.FC = () => {
   };
 
   return (
-    <div className="d-flex">
+    <div className={`${localClassName} d-flex`}>
       <div className={`${classes.sidenavContainer} col-md-2`}>
         <DashboardNavigation />
       </div>
@@ -56,7 +65,7 @@ export const DashboardLayout: React.FC = () => {
                 }
                 transition={TooltipTransitionType.Zoom}
               >
-                <div className={classes.iconContainer} onClick={changeTheme}>
+                <div className={localIconContainer} onClick={changeTheme}>
                   {adminDashboardTheme === "light" ? (
                     <DarkThemeIcon className="icons" />
                   ) : (
@@ -68,12 +77,12 @@ export const DashboardLayout: React.FC = () => {
                 title="Notifications"
                 transition={TooltipTransitionType.Zoom}
               >
-                <div className={classes.iconContainer}>
+                <div className={localIconContainer}>
                   <NotificationIcon className="icons" />
                 </div>
               </Tooltip>
               <Tooltip title="Profile" transition={TooltipTransitionType.Zoom}>
-                <div className={classes.iconContainer}>
+                <div className={localIconContainer}>
                   <ProfileIcon className="icons" />
                 </div>
               </Tooltip>

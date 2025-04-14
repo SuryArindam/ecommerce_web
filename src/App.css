@@ -15,7 +15,7 @@
   box-shadow: 4px 3px 5px 1px rgb(6, 229, 245);
 }
 .lightThemeBackground {
-  background-color: rgba(241, 243, 243, 0.41) !important;
+  background-color: rgba(250, 250, 250, 0.95) !important;
 }
 .lightThemeText {
   color: rgb(3 105 103 / 97%);
