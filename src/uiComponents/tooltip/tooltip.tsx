@@ -8,7 +8,6 @@ import {
 export const Tooltip: React.FC<ITooltipProps> = ({
   children,
   title,
-  arrow,
   direction,
   enterDelay,
   followCursor,
@@ -29,7 +28,7 @@ export const Tooltip: React.FC<ITooltipProps> = ({
   return (
     <MUI_Tooltip
       title={title}
-      arrow={arrow !== undefined ? true : arrow}
+      arrow={true}
       placement={direction ?? TooltipPosition.Bottom}
       enterDelay={enterDelay}
       followCursor={followCursor}

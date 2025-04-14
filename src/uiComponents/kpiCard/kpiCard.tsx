@@ -6,6 +6,7 @@ import CartIcon from "../../assets/icons/cart.svg?react";
 import RevenueIcon from "../../assets/icons/earning.svg?react";
 import "../../App.css";
 import { useAppStore } from "../../appStore/app.store";
+import "../../App.css";
 
 export const KpiCard: React.FC<IKpiCardProps> = ({
   header,
@@ -16,11 +17,12 @@ export const KpiCard: React.FC<IKpiCardProps> = ({
 }) => {
   const { adminDashboardTheme } = useAppStore();
 
+  const lightTheme = "lightThemeBorder lightThemeBackground lightThemeText";
+  const darkTheme = "darkThemeBorder darkThemeBackground darkThemeText";
+
   const localClassName = `${classes.kpiCardContainer} col-md col-sm-12 ${
     className ?? ""
-  } ${
-    adminDashboardTheme === "light" ? classes.lightTheme : classes.darkTheme
-  }`;
+  } ${adminDashboardTheme === "light" ? lightTheme : darkTheme}`;
 
   const iconTextRender: IconText = useMemo(() => {
     const _iconText: IconText = {

@@ -22,7 +22,6 @@ export enum TooltipTransitionType {
 export interface ITooltipProps {
   children: ReactElement;
   title: string;
-  arrow?: boolean;
   enterDelay?: number;
   followCursor?: boolean;
   leaveDelay?: number;

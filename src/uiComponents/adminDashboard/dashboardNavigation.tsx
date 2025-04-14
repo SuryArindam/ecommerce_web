@@ -5,10 +5,22 @@ import { AppConstants } from "../../AppConstants";
 import HamburgerIcon from "../../assets/icons/hamburger.svg?react";
 import classes from "./dashboardNavigation.module.css";
 import "./dashboardNavigation.css";
+import { useAppStore } from "../../appStore/app.store";
+import "../../App.css";
+import { Tooltip } from "../tooltip/tooltip";
+import { TooltipPosition } from "../tooltip/tooltip.model";
 
 export const DashboardNavigation: React.FC = () => {
+  const { adminDashboardTheme } = useAppStore();
+
   const [collapsed, setCollapsed] = useState(false);
 
+  const lightTheme = "lightThemeBorder lightThemeBackground";
+  const darkTheme = `darkThemeBorder darkThemeBackground ${classes.hamburgerIconInvert}`;
+
+  const localClassName = `${collapsed ? classes.translateButton : ""} ${
+    adminDashboardTheme === "light" ? lightTheme : darkTheme
+  } ${classes.hamburgerIconContainer} my-3`;
   return (
     <div className={classes.sidebarContainer}>
       {/* {show && (
@@ -16,14 +28,14 @@ export const DashboardNavigation: React.FC = () => {
           Collapse it
         </button>
       )} */}
-      <div
-        className={`${collapsed ? classes.translateButton : ""} ${
-          classes.hamburgerIconContainer
-        }`}
-        onClick={() => setCollapsed((collapsed) => !collapsed)}
-      >
-        <HamburgerIcon className={classes.hamburgerIcon} />
-      </div>
+      <Tooltip title="Menu" direction={TooltipPosition.Right}>
+        <div
+          className={localClassName}
+          onClick={() => setCollapsed((collapsed) => !collapsed)}
+        >
+          <HamburgerIcon className={classes.hamburgerIcon} />
+        </div>
+      </Tooltip>
       <div>
         <Sidebar
           className={`border border-primary ${classes.sidebarNav}`}
