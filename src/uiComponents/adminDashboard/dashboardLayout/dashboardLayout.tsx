@@ -54,7 +54,6 @@ export const DashboardLayout: React.FC = () => {
                     ? "Change to Dark theme"
                     : "Change to Light theme"
                 }
-                arrow={true}
                 transition={TooltipTransitionType.Zoom}
               >
                 <div className={classes.iconContainer} onClick={changeTheme}>
@@ -67,18 +66,13 @@ export const DashboardLayout: React.FC = () => {
               </Tooltip>
               <Tooltip
                 title="Notifications"
-                arrow
                 transition={TooltipTransitionType.Zoom}
               >
                 <div className={classes.iconContainer}>
                   <NotificationIcon className="icons" />
                 </div>
               </Tooltip>
-              <Tooltip
-                title="Profile"
-                arrow
-                transition={TooltipTransitionType.Zoom}
-              >
+              <Tooltip title="Profile" transition={TooltipTransitionType.Zoom}>
                 <div className={classes.iconContainer}>
                   <ProfileIcon className="icons" />
                 </div>
