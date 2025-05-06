@@ -18,9 +18,15 @@ export const DashboardNavigation: React.FC = () => {
   const lightTheme = "lightThemeBorder lightThemeBackground";
   const darkTheme = "darkThemeBorder darkThemeBackground";
 
-  const localClassName = `${collapsed ? classes.translateButton : ""} ${
-    adminDashboardTheme === "light" ? lightTheme : darkTheme
-  } ${classes.hamburgerIconContainer} my-3`;
+  const themedClass = adminDashboardTheme === "light" ? lightTheme : darkTheme;
+  const localHamburgerContainer = `${
+    collapsed ? classes.translateButton : ""
+  } ${themedClass} ${classes.hamburgerIconContainer} my-3`;
+  const localSidebarClass =
+    adminDashboardTheme === "light"
+      ? `lightThemeBorder lightThemeText`
+      : `darkThemeBorder darkThemeText`;
+
   return (
     <div className={classes.sidebarContainer}>
       {/* {show && (
@@ -30,7 +36,7 @@ export const DashboardNavigation: React.FC = () => {
       )} */}
       <Tooltip title="Menu" direction={TooltipPosition.Right}>
         <div
-          className={localClassName}
+          className={localHamburgerContainer}
           onClick={() => setCollapsed((collapsed) => !collapsed)}
         >
           <HamburgerIcon
@@ -42,7 +48,8 @@ export const DashboardNavigation: React.FC = () => {
       </Tooltip>
       <div>
         <Sidebar
-          className={`${classes.sidebarNav}`}
+          className={`${classes.sidebarNav} ${localSidebarClass}`}
+          backgroundColor={adminDashboardTheme === "light" ? "#fff" : "#000"}
           breakPoint="all"
           // collapsed={collapsed}
           // onBreakPoint={setCollapsed}

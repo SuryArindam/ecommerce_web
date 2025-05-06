@@ -3,6 +3,7 @@ import { AppConstants } from "../../AppConstants";
 import { MenuItem } from "react-pro-sidebar";
 import { NavLink, useLocation } from "react-router-dom";
 import classes from "./dashboardNavigation.module.css";
+import { useAppStore } from "../../appStore/app.store";
 
 interface IDashboardNavigationMenuItemProps {
   path: string;
@@ -12,9 +13,16 @@ interface IDashboardNavigationMenuItemProps {
 export const DashboardNavigationMenuItem: React.FC<
   IDashboardNavigationMenuItemProps
 > = ({ path, menuText, onClick }) => {
+  const { adminDashboardTheme } = useAppStore();
   const [active, setActive] = useState<boolean>();
 
   const location = useLocation();
+
+  const lightTheme = "lightThemeBackground lightThemeText";
+  const darkTheme = "darkThemeBackground darkThemeText";
+
+  const localClassName =
+    adminDashboardTheme === "light" ? lightTheme : darkTheme;
 
   useEffect(() => {
     setActive(location.pathname.indexOf(path) >= 0);
@@ -30,7 +38,13 @@ export const DashboardNavigationMenuItem: React.FC<
   return (
     <>
       <MenuItem
-        className={active ? classes.active : ""}
+        className={`${localClassName} ${
+          active
+            ? adminDashboardTheme === "light"
+              ? classes.activeMenuLight
+              : classes.activeMenuDark
+            : ""
+        }`}
         onClick={onMenuItemClick}
         component={
           <NavLink

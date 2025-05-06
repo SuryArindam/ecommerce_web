@@ -1,6 +1,20 @@
 .active {
-  background-color: rgb(53, 57, 171) !important;
-  border-radius: 20px;
+  /* background-color: rgb(53, 57, 171) !important;
+  border-radius: 20px; */
+}
+.activeMenuLight {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  box-shadow: 4px 3px 5px 1px rgb(6, 229, 245);
+}
+.activeMenuDark {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  box-shadow: 4px 3px 5px 1px rgb(241, 241, 110);
 }
 .sidebarNav {
   position: fixed;
