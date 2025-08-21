@@ -4,16 +4,18 @@ import { MenuItem } from "react-pro-sidebar";
 import { NavLink, useLocation } from "react-router-dom";
 import classes from "./dashboardNavigation.module.css";
 import { useAppStore } from "../../appStore/app.store";
+import { useDashboardNavigationStore } from "./store/dashboardNavigation.store";
 
 interface IDashboardNavigationMenuItemProps {
   path: string;
   menuText: string;
-  onClick?: (e: unknown) => void;
 }
 export const DashboardNavigationMenuItem: React.FC<
   IDashboardNavigationMenuItemProps
-> = ({ path, menuText, onClick }) => {
+> = ({ path, menuText }) => {
   const { adminDashboardTheme } = useAppStore();
+  const { setCollapsed } = useDashboardNavigationStore();
+
   const [active, setActive] = useState<boolean>();
 
   const location = useLocation();
@@ -32,8 +34,8 @@ export const DashboardNavigationMenuItem: React.FC<
     return path === "" ? "" : `${AppConstants.adminDashboardBaseUrl}${path}`;
   }, []);
 
-  const onMenuItemClick = (e: unknown) => {
-    if (onClick) onClick(e);
+  const onMenuItemClick = () => {
+    setCollapsed(false);
   };
   return (
     <>

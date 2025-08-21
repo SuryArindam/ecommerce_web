@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Menu, Sidebar, SubMenu } from "react-pro-sidebar";
 import { DashboardNavigationMenuItem } from "./dashboardNavigationMenuItem";
 import { AppConstants } from "../../AppConstants";
@@ -9,11 +9,12 @@ import { useAppStore } from "../../appStore/app.store";
 import "../../App.css";
 import { Tooltip } from "../tooltip/tooltip";
 import { TooltipPosition } from "../tooltip/tooltip.model";
+import { useDashboardNavigationStore } from "./store/dashboardNavigation.store";
 
 export const DashboardNavigation: React.FC = () => {
   const { adminDashboardTheme } = useAppStore();
-
-  const [collapsed, setCollapsed] = useState(false);
+  const { collapsed, setCollapsed, resetDashboardNavigationStore } =
+    useDashboardNavigationStore();
 
   const lightTheme = "lightThemeBorder lightThemeBackground";
   const darkTheme = "darkThemeBorder darkThemeBackground";
@@ -27,6 +28,11 @@ export const DashboardNavigation: React.FC = () => {
       ? `lightThemeBorder lightThemeText`
       : `darkThemeBorder darkThemeText`;
 
+  useEffect(() => {
+    return () => {
+      resetDashboardNavigationStore();
+    };
+  }, []);
   return (
     <div className={classes.sidebarContainer}>
       {/* {show && (
@@ -37,7 +43,7 @@ export const DashboardNavigation: React.FC = () => {
       <Tooltip title="Menu" direction={TooltipPosition.Right}>
         <div
           className={localHamburgerContainer}
-          onClick={() => setCollapsed((collapsed) => !collapsed)}
+          onClick={() => setCollapsed(!collapsed)}
         >
           <HamburgerIcon
             className={`${
@@ -61,17 +67,14 @@ export const DashboardNavigation: React.FC = () => {
               <DashboardNavigationMenuItem
                 path={AppConstants.adminDashboardHomeUrl}
                 menuText="Home"
-                onClick={() => setCollapsed(false)}
               />
               <DashboardNavigationMenuItem
                 path={AppConstants.adminDashboardUserManagementUrl}
                 menuText="User Management"
-                onClick={() => setCollapsed(false)}
               />
               <DashboardNavigationMenuItem
                 path={AppConstants.adminDashboardProductManagementUrl}
                 menuText="Product Management"
-                onClick={() => setCollapsed(false)}
               />
             </SubMenu>
           </Menu>
