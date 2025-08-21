@@ -1,7 +1,7 @@
 export class AppConstants {
   static adminDashboardBaseUrl = "/admin/dashboard/";
-  static adminOperationUrl = "/adminoperation";
-  static adminDashboardUserManagementUrl = "usermanagement";
-  static adminDashboardProductManagementUrl = "productmanagement";
+  static adminOperationUrl = "/adminOperation";
+  static adminDashboardUserManagementUrl = "userManagement";
+  static adminDashboardProductManagementUrl = "productCategory";
   static adminDashboardHomeUrl = "home";
 }

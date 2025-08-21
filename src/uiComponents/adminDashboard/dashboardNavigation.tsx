@@ -72,9 +72,11 @@ export const DashboardNavigation: React.FC = () => {
                 path={AppConstants.adminDashboardUserManagementUrl}
                 menuText="User Management"
               />
+            </SubMenu>
+            <SubMenu label="Product Management">
               <DashboardNavigationMenuItem
                 path={AppConstants.adminDashboardProductManagementUrl}
-                menuText="Product Management"
+                menuText="Product Category"
               />
             </SubMenu>
           </Menu>
