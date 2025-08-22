@@ -16,6 +16,7 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.15",
     "@types/node": "^22.13.17",
+    "ag-grid-react": "^34.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-pro-sidebar": "^1.1.0",

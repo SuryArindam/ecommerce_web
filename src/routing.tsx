@@ -4,6 +4,7 @@ import { AdminLoginRegister } from "./uiComponents/adminLoginRegister/adminLogin
 import { DashboardLayout } from "./uiComponents/adminDashboard/dashboardLayout/dashboardLayout";
 import { DashboardHome } from "./uiComponents/adminDashboard/dashboardHome/dashboardHome";
 import { AppConstants } from "./AppConstants";
+import { ProductCategory } from "./uiComponents/productManagement/productCategory/productCategory";
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
       },
       {
         path: AppConstants.adminDashboardProductManagementUrl,
-        element: <div>Product management here</div>,
+        element: <ProductCategory />,
       },
     ],
   },
