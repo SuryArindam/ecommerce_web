@@ -21,13 +21,18 @@
   text-shadow: 1px 1px 4px rgb(6, 229, 245);
 }
 .darkThemeBorder {
-  border-color: rgb(243, 243, 29);
-  box-shadow: 4px 3px 5px 1px rgb(241, 241, 110);
+  border-color: rgb(205, 53, 75);
+  box-shadow: 4px 3px 5px 1px rgb(186, 42, 110);
 }
 .darkThemeBackground {
   background-color: rgba(12, 11, 11, 0.874) !important;
 }
+.darkThemeBackground > .ps-menu-button {
+  &:hover {
+    background-color: rgba(238, 194, 233, 0.874) !important;
+  }
+}
 .darkThemeText {
-  color: rgb(243, 243, 29);
-  text-shadow: 1px 1px 4px rgb(241, 241, 110);
+  color: rgb(205, 53, 75);
+  text-shadow: 1px 1px 4px rgb(186, 42, 110);
 }
