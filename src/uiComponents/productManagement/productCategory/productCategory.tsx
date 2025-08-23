@@ -1,8 +1,8 @@
-import { AgGridReact } from "ag-grid-react";
 import React from "react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { AllCommunityModule, ColDef, ModuleRegistry } from "ag-grid-community";
+import { AgGrid } from "../../../sharedComponents/agGrid/agGrid";
 
 export const ProductCategory: React.FC = () => {
   ModuleRegistry.registerModules([AllCommunityModule]);
@@ -25,10 +25,10 @@ export const ProductCategory: React.FC = () => {
   return (
     <div className="container">
       <div className="ag-theme-alpine" style={{ height: 400, width: "100%" }}>
-        <AgGridReact
+        <AgGrid
           rowData={rowData}
           columnDefs={columnDef}
-          rowSelection={{ mode: "multiRow" }}
+          rowSelection={"multiple"}
         />
       </div>
     </div>
