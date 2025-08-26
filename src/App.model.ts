@@ -8,4 +8,5 @@ export const enum Color {
   Success = "success",
   Dark = "dark",
   Light = "light",
+  Default = "default",
 }

@@ -1,35 +1,41 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { AllCommunityModule, ColDef, ModuleRegistry } from "ag-grid-community";
 import { AgGrid } from "../../../sharedComponents/agGrid/agGrid";
+import { useQuery } from "@tanstack/react-query";
+import { productCategoryService } from "../../../services/productCategory/productCategory.service";
+import { StatusCell } from "./statusCell";
 
 export const ProductCategory: React.FC = () => {
   ModuleRegistry.registerModules([AllCommunityModule]);
 
-  const rowData = [
-    { make: "Tesla", model: "Model Y", price: 64950, electric: true },
-    { make: "Ford", model: "F-Series", price: 33850, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Mercedes", model: "EQA", price: 48890, electric: true },
-    { make: "Fiat", model: "500", price: 15774, electric: false },
-    { make: "Nissan", model: "Juke", price: 20675, electric: false },
-  ];
+  const { data: productCategoryResponse } = useQuery({
+    queryKey: ["getAllProductCategoryService"],
+    queryFn: productCategoryService.getAllProductCategoryService,
+  });
+
+  const rowData = useMemo(() => {
+    return productCategoryResponse || [];
+  }, [productCategoryResponse]);
+
   const columnDef: ColDef[] = [
-    { field: "make" },
-    { field: "model" },
-    { field: "price" },
-    { field: "electric" },
+    { field: "name", filter: true, flex: 2, headerName: "Product Category" },
+    {
+      field: "status",
+      filter: true,
+      flex: 1,
+      headerName: "Status",
+      cellRenderer: StatusCell,
+    },
+    { field: "createdOn", filter: true, flex: 2, headerName: "Created On" },
+    { field: "updatedOn", filter: true, flex: 2, headerName: "Updated On" },
   ];
 
   return (
     <div className="container">
       <div className="ag-theme-alpine" style={{ height: 400, width: "100%" }}>
-        <AgGrid
-          rowData={rowData}
-          columnDefs={columnDef}
-          rowSelection={"multiple"}
-        />
+        <AgGrid rowData={rowData} columnDefs={columnDef} />
       </div>
     </div>
   );

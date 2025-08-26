@@ -1,8 +1,8 @@
 export interface IAppStoreState {
   adminDashboardTheme: "dark" | "light";
-  spinner: boolean;
+  showSpinner: boolean;
 }
 export interface IAppStoreAction {
   setAdminDashboardTheme: (theme: "dark" | "light") => void;
-  showSpinner: (spinner: boolean) => void;
+  setShowSpinner: (showSpinner: boolean) => void;
 }

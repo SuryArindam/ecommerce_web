@@ -4,7 +4,7 @@ import { AgGridReact, AgGridReactProps } from "ag-grid-react";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 
 interface IAgGridProps extends AgGridReactProps {
-  noRowsOverlayTemplate?: React.ReactNode;
+  className?: string;
 }
 export const AgGrid: React.FC<IAgGridProps> = ({
   rowData,

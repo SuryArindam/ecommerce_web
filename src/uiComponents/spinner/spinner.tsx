@@ -5,9 +5,9 @@ import classes from "./spinner.module.css";
 import { useAppStore } from "../../appStore/app.store";
 
 export const Spinner: React.FC = () => {
-  const { spinner } = useAppStore();
+  const { showSpinner } = useAppStore();
 
-  if (!spinner) {
+  if (!showSpinner) {
     return null;
   }
   return (
