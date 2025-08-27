@@ -6,6 +6,7 @@ import { AgGrid } from "../../../sharedComponents/agGrid/agGrid";
 import { useQuery } from "@tanstack/react-query";
 import { productCategoryService } from "../../../services/productCategory/productCategory.service";
 import { StatusCell } from "./statusCell";
+import { CreateOrUpdateDate } from "./createOrUpdateDate";
 
 export const ProductCategory: React.FC = () => {
   ModuleRegistry.registerModules([AllCommunityModule]);
@@ -20,16 +21,39 @@ export const ProductCategory: React.FC = () => {
   }, [productCategoryResponse]);
 
   const columnDef: ColDef[] = [
-    { field: "name", filter: true, flex: 2, headerName: "Product Category" },
+    {
+      field: "name",
+      filter: true,
+      flex: 2,
+      headerName: "Product Category",
+      cellClass: "d-flex align-items-center",
+    },
     {
       field: "status",
       filter: true,
       flex: 1,
       headerName: "Status",
       cellRenderer: StatusCell,
+      cellClass: "d-flex align-items-center justify-content-center",
     },
-    { field: "createdOn", filter: true, flex: 2, headerName: "Created On" },
-    { field: "updatedOn", filter: true, flex: 2, headerName: "Updated On" },
+    {
+      field: "createdOn",
+      filter: true,
+      flex: 2,
+      cellRenderer: CreateOrUpdateDate,
+      cellRendererParams: { dateToFormat: "create" },
+      headerName: "Created On",
+      cellClass: "d-flex align-items-center justify-content-center",
+    },
+    {
+      field: "updatedOn",
+      filter: true,
+      flex: 2,
+      cellRenderer: CreateOrUpdateDate,
+      cellRendererParams: { dateToFormat: "update" },
+      headerName: "Updated On",
+      cellClass: "d-flex align-items-center justify-content-center",
+    },
   ];
 
   return (
