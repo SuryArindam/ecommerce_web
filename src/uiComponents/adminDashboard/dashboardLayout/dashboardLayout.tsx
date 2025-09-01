@@ -24,7 +24,7 @@ export const DashboardLayout: React.FC = () => {
 
   const localClassName =
     adminDashboardTheme === "light" ? lightTheme : darkTheme;
-  const localIconContainer = `${classes.iconContainer} ${
+  const localIconContainer = `iconContainer ${
     adminDashboardTheme === "light" ? "lightThemeBorder" : "darkThemeBorder"
   }`;
 

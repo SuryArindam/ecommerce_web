@@ -1,9 +1,10 @@
 import { useMemo } from "react";
+
+import { Chip, ChipOwnProps } from "@mui/material";
 import {
   ProductCategoryItem,
   ProductCategoryStatus,
-} from "../../../services/productCategory/productCategory.model";
-import { Chip, ChipOwnProps } from "@mui/material";
+} from "../../../../services/productCategory/productCategory.model";
 
 interface IStatusCellProps {
   data: ProductCategoryItem;

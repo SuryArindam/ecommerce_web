@@ -36,3 +36,14 @@
   color: rgb(205, 53, 75);
   text-shadow: 1px 1px 4px rgb(186, 42, 110);
 }
+.iconContainer {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  margin-left: 20px;
+  cursor: pointer;
+}
