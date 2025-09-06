@@ -28,7 +28,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
           id="fullName"
           label="Full Name"
           placeHolder="Enter Full Name"
-          onChange={() => {}}
           className="mb-3"
           isRequired={true}
           iconType={IconType.UserName}
@@ -40,7 +39,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
           id="email"
           label="Email"
           placeHolder="Enter Email"
-          onChange={() => {}}
           className="mb-3"
           isRequired={true}
           iconType={IconType.Email}
@@ -52,7 +50,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
           id="phone"
           label="Phone"
           placeHolder="Enter Phone"
-          onChange={() => {}}
           className="mb-3"
           isRequired={true}
           iconType={IconType.Phone}
@@ -64,7 +61,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
           id="password"
           label="Password"
           placeHolder="Enter Password"
-          onChange={() => {}}
           className="mb-3"
           iconType={IconType.Password}
           variant={TextboxVariant.Standard}
@@ -77,7 +73,6 @@ export const AdminRegister: React.FC<IAdminRegisterProps> = ({
           id="confirmPassword"
           label="Confirm Password"
           placeHolder="Re-enter Password"
-          onChange={() => {}}
           className="mb-3"
           iconType={IconType.Password}
           variant={TextboxVariant.Standard}

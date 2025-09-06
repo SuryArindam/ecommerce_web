@@ -33,7 +33,6 @@ export const AdminLogin: React.FC<IAdminLoginProps> = ({ onRegisterClick }) => {
           id="userName"
           label="User name"
           placeHolder="Enter User name"
-          onChange={() => {}}
           className="mb-3"
           isRequired={true}
           iconType={IconType.UserName}
@@ -45,7 +44,6 @@ export const AdminLogin: React.FC<IAdminLoginProps> = ({ onRegisterClick }) => {
           id="password"
           label="Password"
           placeHolder="Enter Password"
-          onChange={() => {}}
           className="mb-3"
           iconType={IconType.Password}
           isPasswordField={true}

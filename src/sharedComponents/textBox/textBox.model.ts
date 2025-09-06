@@ -38,13 +38,13 @@ export enum IconType {
 }
 export interface ITextBox {
   value?: string | null | undefined;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id?: string;
   name?: string;
   isError?: boolean;
   errorText?: string;
   className?: string;
-  placeHolder: string;
+  placeHolder?: string;
   label: string;
   variant?: TextboxVariant;
   isPasswordField?: boolean;
