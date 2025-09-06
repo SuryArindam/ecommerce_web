@@ -1,17 +1,18 @@
+import "./dialog.css";
 import React, { useMemo } from "react";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
+
 import { IButton } from "../button/button.model";
-import classes from "./dialog.module.css";
 import { Button } from "../button/button";
+import { Modal } from "react-bootstrap";
+import { DialogSize } from "./dialog.model";
 
 interface IDialogBoxProps {
   header?: string;
   onHide: () => void;
   buttons: IButton[];
   children?: React.ReactNode;
+  centered?: boolean;
+  size?: DialogSize;
 }
 
 export const DialogBox: React.FC<IDialogBoxProps> = ({
@@ -19,6 +20,8 @@ export const DialogBox: React.FC<IDialogBoxProps> = ({
   buttons,
   children,
   header,
+  centered,
+  size,
 }) => {
   const buttonsToRender = useMemo(() => {
     return (
@@ -46,18 +49,19 @@ export const DialogBox: React.FC<IDialogBoxProps> = ({
   }, [buttons]);
 
   return (
-    <Dialog
-      open={true}
-      onClose={onHide}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
+    <Modal
+      show={true}
+      onHide={onHide}
+      backdrop="static"
+      keyboard={false}
+      centered={centered}
+      size={size || "sm"}
     >
-      <DialogTitle id="alert-dialog-title">{header}</DialogTitle>
-      <div className="w-100 px-3">
-        <div className={classes.dialogHeader}></div>
-      </div>
-      <DialogContent>{children}</DialogContent>
-      <DialogActions>{buttonsToRender}</DialogActions>
-    </Dialog>
+      <Modal.Header closeButton>
+        <Modal.Title>{header}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{children}</Modal.Body>
+      <Modal.Footer>{buttonsToRender}</Modal.Footer>
+    </Modal>
   );
 };
