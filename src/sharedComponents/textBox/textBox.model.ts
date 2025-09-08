@@ -39,6 +39,7 @@ export enum IconType {
 export interface ITextBox {
   value?: string | null | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   id?: string;
   name?: string;
   isError?: boolean;

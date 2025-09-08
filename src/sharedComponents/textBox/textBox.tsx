@@ -17,6 +17,7 @@ export const TextBox: React.FC<ITextBox> = ({
   id,
   name,
   onChange,
+  onBlur,
   value,
   isError,
   errorText,
@@ -75,6 +76,7 @@ export const TextBox: React.FC<ITextBox> = ({
             label={label}
             variant={variant ?? TextboxVariant.Outlined}
             onChange={onChange}
+            onBlur={onBlur}
             color="customColor"
             InputProps={{
               disableUnderline: true,
