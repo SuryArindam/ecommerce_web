@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { AppConstants } from "../../AppConstants";
+import { AppConstants } from "src/AppConstants";
 import { MenuItem } from "react-pro-sidebar";
 import { NavLink, useLocation } from "react-router-dom";
 import classes from "./dashboardNavigation.module.css";
-import { useAppStore } from "../../appStore/app.store";
+import { useAppStore } from "src/appStore/app.store";
 import { useDashboardNavigationStore } from "./store/dashboardNavigation.store";
 
 interface IDashboardNavigationMenuItemProps {

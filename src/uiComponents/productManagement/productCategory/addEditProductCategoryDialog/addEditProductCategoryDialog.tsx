@@ -1,6 +1,6 @@
 import React from "react";
-import { DialogBox } from "../../../../sharedComponents/dialog/dialog";
-import { IButton } from "../../../../sharedComponents/button/button.model";
+import { DialogBox } from "src/sharedComponents/dialog/dialog";
+import { IButton } from "src/sharedComponents/button/button.model";
 
 interface IAddEditProductCategoryDialogProps {
   onHide: () => void;

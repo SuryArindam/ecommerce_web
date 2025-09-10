@@ -1,15 +1,15 @@
 import { Link, Typography } from "@mui/material";
 import React from "react";
-import { TextBox } from "../../../sharedComponents/textBox/textBox";
+import { TextBox } from "src/sharedComponents/textBox/textBox";
 import {
   IconType,
   TextboxVariant,
-} from "../../../sharedComponents/textBox/textBox.model";
-import { Button } from "../../../sharedComponents/button/button";
-import { Color } from "../../../App.model";
+} from "src/sharedComponents/textBox/textBox.model";
+import { Button } from "src/sharedComponents/button/button";
+import { Color } from "src/App.model";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import { ButtonVariant } from "../../../sharedComponents/button/button.model";
-import "../../../App.css";
+import { ButtonVariant } from "src/sharedComponents/button/button.model";
+import "src/App.css";
 import classes from "../adminLoginRegister.module.css";
 
 interface IAdminRegisterProps {

@@ -2,7 +2,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import classes from "./spinner.module.css";
-import { useAppStore } from "../../appStore/app.store";
+import { useAppStore } from "src/appStore/app.store";
 
 export const Spinner: React.FC = () => {
   const { showSpinner } = useAppStore();

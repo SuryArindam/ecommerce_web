@@ -1,4 +1,3 @@
-import "./dialog.css";
 import React, { useMemo } from "react";
 
 import { IButton } from "../button/button.model";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Tooltip } from "../../../tooltip/tooltip";
-import { useAppStore } from "../../../../appStore/app.store";
-import AddIcon from "../../../../assets/icons/addButton.svg?react";
+import { Tooltip } from "src/uiComponents/tooltip/tooltip";
+import { useAppStore } from "src/appStore/app.store";
+import AddIcon from "src/assets/icons/addButton.svg?react";
 import { AddEditProductCategoryDialog } from "../addEditProductCategoryDialog/addEditProductCategoryDialog";
 
 export const AddProductCategory: React.FC = () => {

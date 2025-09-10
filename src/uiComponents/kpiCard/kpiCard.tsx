@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 import classes from "./kpiCard.module.css";
 import { IconText, IKpiCardProps, KpiIconType } from "./kpiCard.model";
-import ClientsIcon from "../../assets/icons/clients.svg?react";
-import CartIcon from "../../assets/icons/cart.svg?react";
-import RevenueIcon from "../../assets/icons/earning.svg?react";
-import "../../App.css";
-import { useAppStore } from "../../appStore/app.store";
-import "../../App.css";
+import ClientsIcon from "src/assets/icons/clients.svg?react";
+import CartIcon from "src/assets/icons/cart.svg?react";
+import RevenueIcon from "src/assets/icons/earning.svg?react";
+import "src/App.css";
+import { useAppStore } from "src/appStore/app.store";
+import "src/App.css";
 
 export const KpiCard: React.FC<IKpiCardProps> = ({
   header,

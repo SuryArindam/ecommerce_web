@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Menu, Sidebar, SubMenu } from "react-pro-sidebar";
 import { DashboardNavigationMenuItem } from "./dashboardNavigationMenuItem";
-import { AppConstants } from "../../AppConstants";
-import HamburgerIcon from "../../assets/icons/hamburger.svg?react";
+import { AppConstants } from "src/AppConstants";
+import HamburgerIcon from "src/assets/icons/hamburger.svg?react";
 import classes from "./dashboardNavigation.module.css";
 import "./dashboardNavigation.css";
-import { useAppStore } from "../../appStore/app.store";
-import "../../App.css";
-import { Tooltip } from "../tooltip/tooltip";
-import { TooltipPosition } from "../tooltip/tooltip.model";
+import { useAppStore } from "src/appStore/app.store";
+import "src/App.css";
+import { Tooltip } from "src/uiComponents/tooltip/tooltip";
+import { TooltipPosition } from "src/uiComponents/tooltip/tooltip.model";
 import { useDashboardNavigationStore } from "./store/dashboardNavigation.store";
 
 export const DashboardNavigation: React.FC = () => {

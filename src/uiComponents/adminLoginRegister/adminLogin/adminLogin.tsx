@@ -1,18 +1,18 @@
 import { Link, Typography } from "@mui/material";
 import React from "react";
-import { TextBox } from "../../../sharedComponents/textBox/textBox";
+import { TextBox } from "src/sharedComponents/textBox/textBox";
 import classes from "../adminLoginRegister.module.css";
 import {
   IconType,
   TextboxVariant,
-} from "../../../sharedComponents/textBox/textBox.model";
-import { Button } from "../../../sharedComponents/button/button";
-import { Color } from "../../../App.model";
+} from "src/sharedComponents/textBox/textBox.model";
+import { Button } from "src/sharedComponents/button/button";
+import { Color } from "src/App.model";
 import LoginIcon from "@mui/icons-material/Login";
-import { ButtonVariant } from "../../../sharedComponents/button/button.model";
-import data from "../../../sampleData.json";
+import { ButtonVariant } from "src/sharedComponents/button/button.model";
+import data from "src/sampleData.json";
 import { IAdmin } from "../admin.model";
-import "../../../App.css";
+import "src/App.css";
 
 interface IAdminLoginProps {
   onRegisterClick: () => void;

@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { DashboardNavigation } from "../dashboardNavigation";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { AppConstants } from "../../../AppConstants";
+import { AppConstants } from "src/AppConstants";
 import classes from "./dashboardLayout.module.css";
-import NotificationIcon from "../../../assets/icons/notification.svg?react";
-import LightThemeIcon from "../../../assets/icons/lightTheme.svg?react";
-import DarkThemeIcon from "../../../assets/icons/darkTheme.svg?react";
-import ProfileIcon from "../../../assets/icons/account.svg?react";
+import NotificationIcon from "src/assets/icons/notification.svg?react";
+import LightThemeIcon from "src/assets/icons/lightTheme.svg?react";
+import DarkThemeIcon from "src/assets/icons/darkTheme.svg?react";
+import ProfileIcon from "src/assets/icons/account.svg?react";
 
-import "../../../App.css";
-import { useAppStore } from "../../../appStore/app.store";
-import { Tooltip } from "../../tooltip/tooltip";
-import { TooltipTransitionType } from "../../tooltip/tooltip.model";
+import "src/App.css";
+import { useAppStore } from "src/appStore/app.store";
+import { Tooltip } from "src/uiComponents/tooltip/tooltip";
+import { TooltipTransitionType } from "src/uiComponents/tooltip/tooltip.model";
 
 export const DashboardLayout: React.FC = () => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import { KpiCard } from "../../kpiCard/kpiCard";
-import { KpiIconType } from "../../kpiCard/kpiCard.model";
+import { KpiCard } from "src/uiComponents/kpiCard/kpiCard";
+import { KpiIconType } from "src/uiComponents/kpiCard/kpiCard.model";
 
 export const DashboardHome: React.FC = () => {
   return (
