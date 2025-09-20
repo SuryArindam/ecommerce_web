@@ -3,7 +3,6 @@ import React, { useMemo } from "react";
 import { IButton } from "../button/button.model";
 import { Button } from "../button/button";
 import { Modal } from "react-bootstrap";
-import { DialogSize } from "./dialog.model";
 
 interface IDialogBoxProps {
   header?: string;
@@ -11,7 +10,7 @@ interface IDialogBoxProps {
   buttons: IButton[];
   children?: React.ReactNode;
   centered?: boolean;
-  size?: DialogSize;
+  className?: string;
 }
 
 export const DialogBox: React.FC<IDialogBoxProps> = ({
@@ -20,7 +19,7 @@ export const DialogBox: React.FC<IDialogBoxProps> = ({
   children,
   header,
   centered,
-  size,
+  className,
 }) => {
   const buttonsToRender = useMemo(() => {
     return (
@@ -54,7 +53,7 @@ export const DialogBox: React.FC<IDialogBoxProps> = ({
       backdrop="static"
       keyboard={false}
       centered={centered}
-      size={size || "sm"}
+      className={className}
     >
       <Modal.Header closeButton>
         <Modal.Title>{header}</Modal.Title>

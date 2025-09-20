@@ -27,7 +27,6 @@ export const TextBox: React.FC<ITextBox> = ({
   placeHolder,
   iconType,
   isPasswordField,
-  isRequired,
   fullWidth,
 }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -70,7 +69,6 @@ export const TextBox: React.FC<ITextBox> = ({
             value={value}
             placeholder={placeHolder}
             className={className}
-            required={isRequired ?? false}
             error={isError}
             helperText={isError ? errorText : ""}
             label={label}
