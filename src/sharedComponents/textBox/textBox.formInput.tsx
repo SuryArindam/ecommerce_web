@@ -54,7 +54,7 @@ export const TextBoxFormInput: React.FC<ITextBoxFormInputProps> = ({
       onChange={field.onChange}
       onBlur={field.onBlur}
       value={field.value}
-      isError={formState.isSubmitted || fieldState.invalid}
+      isError={formState.isSubmitted && fieldState.invalid}
       errorText={fieldState.error?.message}
     />
   );

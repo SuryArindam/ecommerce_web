@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
-import { AgGrid } from "../../../../sharedComponents/agGrid/agGrid";
-import { productCategoryService } from "../../../../services/productCategory/productCategory.service";
+import { AgGrid } from "src/sharedComponents/agGrid/agGrid";
+import { productCategoryService } from "src/services/productCategory/productCategory.service";
 import { useQuery } from "@tanstack/react-query";
 import { ColDef } from "ag-grid-community";
 import { StatusCell } from "./statusCell";

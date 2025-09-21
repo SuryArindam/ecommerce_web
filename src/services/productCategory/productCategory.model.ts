@@ -11,3 +11,13 @@ export interface ProductCategoryItem {
   createdOn: string;
   updatedOn: string;
 }
+
+export interface SavedProductCategory {
+  name: string;
+  status: ProductCategoryStatus;
+  createdOn: string;
+}
+
+export interface CreateProductCategoryRequest {
+  name: string;
+}

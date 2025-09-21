@@ -3,6 +3,11 @@ import { DialogBox } from "src/sharedComponents/dialog/dialog";
 import { IButton } from "src/sharedComponents/button/button.model";
 import { useForm } from "react-hook-form";
 import { TextBoxFormInput } from "src/sharedComponents/textBox/textBox.formInput";
+import { useMutation } from "@tanstack/react-query";
+import { productCategoryService } from "src/services/productCategory/productCategory.service";
+import { useAppStore } from "src/appStore/app.store";
+import { Color } from "src/App.model";
+import { queryClient } from "src/App.helper";
 interface IAddEditProductCategoryDialogProps {
   onHide: () => void;
   mode: "add" | "edit";
@@ -15,14 +20,36 @@ interface IDialogForm {
 export const AddEditProductCategoryDialog: React.FC<
   IAddEditProductCategoryDialogProps
 > = ({ onHide }) => {
+  const { openSnackBar } = useAppStore();
   const { control, handleSubmit } = useForm<IDialogForm>({
     defaultValues: {
       name: "",
     },
   });
 
-  const onSubmitForm = (formData: IDialogForm) => {
-    console.log(formData);
+  const { mutate: addProductCategory } = useMutation({
+    mutationKey: ["createNewProductCategory"],
+    mutationFn: (name: string) =>
+      productCategoryService.createNewProductCategory(name),
+    onSuccess: () => {
+      openSnackBar({
+        severity: Color.Success,
+        message: "New product category has been created.",
+      });
+      queryClient.invalidateQueries({
+        queryKey: ["getAllProductCategoryService"],
+      });
+      onHide();
+    },
+    onError: (e) => {
+      openSnackBar({
+        severity: Color.Danger,
+        message: `Exception is occured- ${e}`,
+      });
+    },
+  });
+  const onSubmitForm = async (formData: IDialogForm) => {
+    await addProductCategory(formData.name);
   };
 
   const button: IButton[] = [

@@ -8,10 +8,10 @@ class HttpService {
     return axiosInstance.get<T>(url);
   }
   public Post<T, U>(url: string, body: U) {
-    return axiosInstance.post<U, T>(url, body);
+    return axiosInstance.post<T>(url, body);
   }
   public Put<T, U>(url: string, body: U) {
-    return axiosInstance.put<U, T>(url, body);
+    return axiosInstance.put<T>(url, body);
   }
   public Delete<T>(url: string) {
     return axiosInstance.delete<T>(url);

@@ -77,7 +77,6 @@ export const TextBox: React.FC<ITextBox> = ({
             onBlur={onBlur}
             color="customColor"
             InputProps={{
-              disableUnderline: true,
               ...(isPasswordField
                 ? {
                     endAdornment: (

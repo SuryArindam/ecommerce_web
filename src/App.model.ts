@@ -10,3 +10,8 @@ export const enum Color {
   Light = "light",
   Default = "default",
 }
+
+export enum IDashboardTheme {
+  Dark = "dark",
+  light = "light",
+}

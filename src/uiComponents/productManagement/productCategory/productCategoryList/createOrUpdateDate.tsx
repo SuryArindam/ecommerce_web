@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { ProductCategoryItem } from "../../../services/productCategory/productCategory.model";
+import { ProductCategoryItem } from "src/services/productCategory/productCategory.model";
 
 interface ICreateOrUpdateDateProps {
   data: ProductCategoryItem;
@@ -13,7 +13,9 @@ export const CreateOrUpdateDate: React.FC<ICreateOrUpdateDateProps> = ({
     switch (dateToFormat) {
       case "create": {
         const incomingDate = new Date(data.createdOn);
-        return `${incomingDate.getDate()}/${incomingDate.getMonth()}/${incomingDate.getFullYear()}`;
+        return `${incomingDate.getDate()}/${
+          incomingDate.getMonth() + 1
+        }/${incomingDate.getFullYear()}`;
       }
       case "update": {
         if (data.updatedOn === null) {
