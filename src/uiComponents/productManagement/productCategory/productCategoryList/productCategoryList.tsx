@@ -19,38 +19,46 @@ export const ProductCategoryList: React.FC = () => {
   const columnDef: ColDef[] = [
     {
       field: "name",
-      filter: true,
+      //filter: true,
       flex: 2,
       headerName: "Product Category",
-      cellClass: "d-flex align-items-center",
+      cellClass: "d-flex align-items-center border border-2 border-end-0",
     },
     {
       field: "status",
-      filter: true,
+      //filter: true,
       flex: 1,
       headerName: "Status",
       cellRenderer: StatusCell,
-      cellClass: "d-flex align-items-center justify-content-center",
+      cellClass:
+        "d-flex align-items-center justify-content-center border border-2 border-end-0",
     },
     {
       field: "createdOn",
-      filter: "agDateColumnFilter",
+      //filter: "agDateColumnFilter",
       flex: 2,
       cellDataType: "date",
       cellRenderer: CreateOrUpdateDate,
       cellRendererParams: { dateToFormat: "create" },
       headerName: "Created On",
-      cellClass: "d-flex align-items-center justify-content-center",
+      cellClass:
+        "d-flex align-items-center justify-content-center border border-2 border-end-0",
     },
     {
       field: "updatedOn",
-      filter: "agDateColumnFilter",
+      //filter: "agDateColumnFilter",
       flex: 2,
       cellDataType: "date",
       cellRenderer: CreateOrUpdateDate,
       cellRendererParams: { dateToFormat: "update" },
       headerName: "Updated On",
-      cellClass: "d-flex align-items-center justify-content-center",
+      cellClass:
+        "d-flex align-items-center justify-content-center border border-2 border-end-0",
+    },
+    {
+      field: "",
+      flex: 0.5,
+      cellClass: "border border-2 border-start-0 border-end-0",
     },
   ];
   return (

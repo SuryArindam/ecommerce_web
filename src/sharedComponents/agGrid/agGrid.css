@@ -4,7 +4,10 @@
 .ag-row {
   /* border-top: 1px solid; */
   /* border-bottom: 1px solid; */
+  &:hover {
+    background-color: #dfdada;
+  }
 }
 .ag-cell {
-  border-right: 1px solid #373131 !important;
+  /* border-right: 1px solid #373131; */
 }
