@@ -1,0 +1,9 @@
+.moreMenuIcon {
+  width: 15px;
+  height: 15px;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  &:hover {
+    cursor: pointer;
+  }
+}

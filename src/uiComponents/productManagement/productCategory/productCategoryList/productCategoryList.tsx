@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ColDef } from "ag-grid-community";
 import { StatusCell } from "./statusCell";
 import { CreateOrUpdateDate } from "./createOrUpdateDate";
+import { MoreMenu } from "./moreMenu/moreMenu";
 
 export const ProductCategoryList: React.FC = () => {
   const { data: productCategoryResponse } = useQuery({
@@ -59,6 +60,7 @@ export const ProductCategoryList: React.FC = () => {
       field: "",
       flex: 0.5,
       cellClass: "border border-2 border-start-0 border-end-0",
+      cellRenderer: MoreMenu,
     },
   ];
   return (

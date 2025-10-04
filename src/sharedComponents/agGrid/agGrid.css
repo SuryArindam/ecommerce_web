@@ -11,3 +11,7 @@
 .ag-cell {
   /* border-right: 1px solid #373131; */
 }
+.ag-header-cell-label {
+  display: flex;
+  justify-content: center;
+}

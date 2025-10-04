@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { DialogBox } from "src/sharedComponents/dialog/dialog";
 import { IButton } from "src/sharedComponents/button/button.model";
 import { useForm } from "react-hook-form";
@@ -19,13 +19,19 @@ interface IDialogForm {
 
 export const AddEditProductCategoryDialog: React.FC<
   IAddEditProductCategoryDialogProps
-> = ({ onHide }) => {
+> = ({ onHide, mode }) => {
   const { openSnackBar } = useAppStore();
   const { control, handleSubmit } = useForm<IDialogForm>({
     defaultValues: {
       name: "",
     },
   });
+
+  const headerText = useMemo(() => {
+    return mode === "add"
+      ? "Add new Product Category"
+      : "Edit Product Category";
+  }, [mode]);
 
   const { mutate: addProductCategory } = useMutation({
     mutationKey: ["createNewProductCategory"],
@@ -59,9 +65,9 @@ export const AddEditProductCategoryDialog: React.FC<
     },
   ];
   return (
-    <DialogBox onHide={onHide} buttons={button}>
+    <DialogBox onHide={onHide} buttons={button} header={headerText}>
       <div className="w-100 d-flex justify-content-between">
-        <div>Enter Product category name</div>
+        <div className="d-flex align-items-center">Category name</div>
         <div>
           <TextBoxFormInput
             control={control as never}
