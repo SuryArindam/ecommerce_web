@@ -26,20 +26,22 @@ export const DialogBox: React.FC<IDialogBoxProps> = ({
       <>
         {(buttons || []).map((button, index) => {
           return (
-            <Button
-              onClick={button.onClick}
-              key={index}
-              className={button.className}
-              color={button.color}
-              fullWidth={button.fullWidth}
-              id={button.id}
-              icon={button.icon}
-              name={button.name}
-              size={button.size}
-              variant={button.variant}
-            >
-              {button.children}
-            </Button>
+            <div className="d-flex justify-content-around">
+              <Button
+                onClick={button.onClick}
+                key={index}
+                className={button.className}
+                color={button.color}
+                fullWidth={button.fullWidth}
+                id={button.id}
+                icon={button.icon}
+                name={button.name}
+                size={button.size}
+                variant={button.variant}
+              >
+                {button.children}
+              </Button>
+            </div>
           );
         })}
       </>

@@ -1,6 +1,9 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { DialogBox } from "src/sharedComponents/dialog/dialog";
-import { IButton } from "src/sharedComponents/button/button.model";
+import {
+  ButtonVariant,
+  IButton,
+} from "src/sharedComponents/button/button.model";
 import { useForm } from "react-hook-form";
 import { TextBoxFormInput } from "src/sharedComponents/textBox/textBox.formInput";
 import { useMutation } from "@tanstack/react-query";
@@ -8,6 +11,7 @@ import { productCategoryService } from "src/services/productCategory/productCate
 import { useAppStore } from "src/appStore/app.store";
 import { Color } from "src/App.model";
 import { queryClient } from "src/App.helper";
+import { useProductCategoryStore } from "../productCategoryList/store/productCategory.store";
 interface IAddEditProductCategoryDialogProps {
   onHide: () => void;
   mode: "add" | "edit";
@@ -21,11 +25,19 @@ export const AddEditProductCategoryDialog: React.FC<
   IAddEditProductCategoryDialogProps
 > = ({ onHide, mode }) => {
   const { openSnackBar } = useAppStore();
-  const { control, handleSubmit } = useForm<IDialogForm>({
+  const { currentProductCategory, resetStore } = useProductCategoryStore();
+
+  const { control, handleSubmit, setValue } = useForm<IDialogForm>({
     defaultValues: {
       name: "",
     },
   });
+
+  useEffect(() => {
+    if (currentProductCategory) {
+      setValue("name", currentProductCategory.name);
+    }
+  }, [currentProductCategory]);
 
   const headerText = useMemo(() => {
     return mode === "add"
@@ -58,14 +70,25 @@ export const AddEditProductCategoryDialog: React.FC<
     await addProductCategory(formData.name);
   };
 
+  const onDialogHide = () => {
+    resetStore();
+    onHide();
+  };
+
   const button: IButton[] = [
     {
-      children: "Add",
+      children: mode === "add" ? "Add new category" : "Save changes",
       onClick: handleSubmit(onSubmitForm),
     },
+    {
+      children: "Cancel",
+      variant: ButtonVariant.Outlined,
+      onClick: onDialogHide,
+    },
   ];
+
   return (
-    <DialogBox onHide={onHide} buttons={button} header={headerText}>
+    <DialogBox onHide={onDialogHide} buttons={button} header={headerText}>
       <div className="w-100 d-flex justify-content-between">
         <div className="d-flex align-items-center">Category name</div>
         <div>
